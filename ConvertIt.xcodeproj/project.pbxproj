@@ -39,6 +39,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B1080B9220F7934A00BC961A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B1080B9020F7932200BC961A /* WeightController.swift */,
+				B16CBBBF20EC1C5F00DFB82B /* ViewController.swift */,
+			);
+			name = Controller;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		B16CBBB120EC1C5F00DFB82B = {
 			isa = PBXGroup;
 			children = (
@@ -58,9 +68,8 @@
 		B16CBBBC20EC1C5F00DFB82B /* ConvertIt */ = {
 			isa = PBXGroup;
 			children = (
-				B1080B9020F7932200BC961A /* WeightController.swift */,
+				B1080B9220F7934A00BC961A /* Controller */,
 				B16CBBBD20EC1C5F00DFB82B /* AppDelegate.swift */,
-				B16CBBBF20EC1C5F00DFB82B /* ViewController.swift */,
 				B1080B8C20F7861400BC961A /* CustomCell.swift */,
 				B16CBBC120EC1C5F00DFB82B /* Main.storyboard */,
 				B16CBBC420EC1C6100DFB82B /* Assets.xcassets */,

@@ -41,7 +41,13 @@ class IndexViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let segue = self.data[indexPath.row].message{
+            performSegue(withIdentifier: segue, sender: self)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
 }
 
