@@ -20,6 +20,9 @@ class IndexViewController: UITableViewController{
         super.viewDidLoad()
         
         data = [CellData.init(image: #imageLiteral(resourceName: "scale"), message: "Weight")]
+        self.tableView.register(CustomCell.self, forCellReuseIdentifier: "custom")
+        
+        self.tableView.separatorStyle = .none
         
     }
 
@@ -29,11 +32,14 @@ class IndexViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "custom") as! CustomCell
+        cell.customImage = data[indexPath.row].image
+        cell.customMessage = data[indexPath.row].message
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        return data.count
     }
 
 

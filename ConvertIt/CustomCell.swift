@@ -17,6 +17,7 @@ class CustomCell: UITableViewCell {
     var customMessageView : UITextView = {
         var textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.isEditable = false
         return textView
     }()
     
@@ -25,7 +26,6 @@ class CustomCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
     
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
