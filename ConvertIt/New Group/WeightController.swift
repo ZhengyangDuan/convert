@@ -36,6 +36,9 @@ class WeightController: UIViewController, UITableViewDelegate, UITableViewDataSo
         fromview.separatorStyle = .none
         toview.separatorStyle = .none
         
+        fromview.estimatedRowHeight = 30
+        toview.estimatedRowHeight = 30
+        
     }
 
     //delegate method
@@ -43,9 +46,10 @@ class WeightController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return measurements.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! UITableViewCell
         cell.textLabel?.text = measurements[indexPath.row]
+        cell.textLabel?.textAlignment = .center
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -62,6 +66,10 @@ class WeightController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     @IBAction func frompressed(_ sender: UIButton) {
