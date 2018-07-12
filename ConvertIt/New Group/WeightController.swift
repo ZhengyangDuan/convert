@@ -9,14 +9,20 @@
 import Foundation
 import UIKit
 
-class WeightController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class WeightController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
     
     
     @IBOutlet weak var fromview: UITableView!
     @IBOutlet weak var toview: UITableView!
     @IBOutlet weak var fromBtn: UIButton!
     @IBOutlet weak var toBtn: UIButton!
+    @IBOutlet weak var inputField: UITextField!
+    @IBOutlet weak var result: UILabel!
+    
+    
     var measurements = ["kg", "lb", "oz"]
+    var temp: Double = 0.00
+    var target: Double = 0.00
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -26,6 +32,7 @@ class WeightController: UIViewController, UITableViewDelegate, UITableViewDataSo
         toview.delegate = self
         fromview.isHidden = true
         toview.isHidden = true
+        inputField.delegate = self
         fromview.separatorStyle = .none
         toview.separatorStyle = .none
         
@@ -43,11 +50,18 @@ class WeightController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView.tag == 1{
-            fromBtn.titleLabel?.text = tableView.cellForRow(at: indexPath)?.textLabel?.text
+            fromBtn.setTitle(tableView.cellForRow(at: indexPath)?.textLabel?.text, for:[])
+            tableView.isHidden = true
         }else if tableView.tag == 2{
-            toBtn.titleLabel?.text = tableView.cellForRow(at: indexPath)?.textLabel?.text
+            toBtn.setTitle(tableView.cellForRow(at: indexPath)?.textLabel?.text, for: [])
+            tableView.isHidden = true
         }
-        tableView.isHidden = true
+        
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @IBAction func frompressed(_ sender: UIButton) {
@@ -55,5 +69,33 @@ class WeightController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     @IBAction func topressed(_ sender: Any) {
         toview.isHidden = false
+    }
+    
+    @IBAction func convertPressed(_ sender: Any) {
+        if !((fromBtn.titleLabel?.text)!=="select") && !((toBtn.titleLabel?.text)!=="select"){
+            let answer = convert(source: (fromBtn.titleLabel?.text)!, to: (toBtn.titleLabel?.text)!)
+            result.text = "\(round(answer*100)/100)" + (toBtn.titleLabel?.text!)!
+        }
+        
+
+    }
+    
+    func convert(source: String, to: String) -> Double{
+        var target:Double = 0.0
+        if let from:Double = Double(inputField.text!){
+            switch source {
+            case "kg": temp = from
+            case "lb": temp = from * (1/2.2046226218)
+            case "oz": temp = (from/16)*(1/2.2046226218)
+            default: result.text = "please select measurement"
+            }
+            switch to{
+            case "kg": target = temp
+            case "lb": target = temp * 2.2046226218
+            case "oz": target = temp * 2.2046226218 * 16
+            default: result.text = "please select measurement"
+            }
+        }
+       return target
     }
 }

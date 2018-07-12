@@ -51,17 +51,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCQ-rd-zyh">
-                                <rect key="frame" x="72" y="307" width="46" height="30"/>
+                                <rect key="frame" x="74" y="307" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="select"/>
                                 <connections>
                                     <action selector="frompressed:" destination="Lsj-s5-zOa" eventType="touchUpInside" id="cKZ-si-eN7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7d-6c-fXa">
-                                <rect key="frame" x="251" y="307" width="46" height="30"/>
+                                <rect key="frame" x="261" y="307" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="select"/>
                                 <connections>
                                     <action selector="topressed:" destination="Lsj-s5-zOa" eventType="touchUpInside" id="8wR-Vm-ql9"/>
                                 </connections>
@@ -76,6 +76,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d1b-KH-9Rn">
+                                <rect key="frame" x="47" y="165" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBo-Ma-9Ne">
+                                <rect key="frame" x="160" y="279" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Convert"/>
+                                <connections>
+                                    <action selector="convertPressed:" destination="Lsj-s5-zOa" eventType="touchUpInside" id="Acs-CT-SMc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0O-vh-2kx">
+                                <rect key="frame" x="237" y="162" width="91" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bAj-dz-oYy"/>
@@ -83,6 +105,8 @@
                     <connections>
                         <outlet property="fromBtn" destination="TCQ-rd-zyh" id="mwI-2c-1Or"/>
                         <outlet property="fromview" destination="3lt-Lg-oA3" id="Z5J-vG-oW3"/>
+                        <outlet property="inputField" destination="d1b-KH-9Rn" id="WTl-9V-10f"/>
+                        <outlet property="result" destination="t0O-vh-2kx" id="GLC-CU-ruw"/>
                         <outlet property="toBtn" destination="F7d-6c-fXa" id="aeG-kD-dNb"/>
                         <outlet property="toview" destination="jEh-cb-g0N" id="Ax5-xT-U9V"/>
                     </connections>
