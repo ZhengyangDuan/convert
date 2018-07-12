@@ -8,16 +8,32 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+struct CellData {
+    let image: UIImage?
+    let message: String?
+}
 
+class IndexViewController: UITableViewController{
+    
+    var data = [CellData]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        data = [CellData.init(image: #imageLiteral(resourceName: "scale"), message: "Weight")]
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
     }
 
 
