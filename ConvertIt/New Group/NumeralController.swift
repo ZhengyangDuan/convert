@@ -53,7 +53,7 @@ class NumeralController: UIViewController, UITextFieldDelegate{
         
     }
     
-    
+    // MARK: - functions
     func romanToInt(_ s: String) -> Int {
         var res = 0
         let dict: [Character : Int] =
