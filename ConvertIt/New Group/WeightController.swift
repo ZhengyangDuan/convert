@@ -36,8 +36,8 @@ class WeightController: UIViewController, UITableViewDelegate, UITableViewDataSo
         fromview.separatorStyle = .none
         toview.separatorStyle = .none
         
-        fromview.estimatedRowHeight = 30
-        toview.estimatedRowHeight = 30
+        fromview.rowHeight = 35
+        toview.rowHeight = 35
         
     }
 
@@ -47,10 +47,22 @@ class WeightController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! UITableViewCell
-        cell.textLabel?.text = measurements[indexPath.row]
-        cell.textLabel?.textAlignment = .center
-        return cell
+        if tableView.tag == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "fromCell") as! WeightCell1
+            cell.label.text = measurements[indexPath.row]
+            cell.textLabel?.text = measurements[indexPath.row]
+            cell.textLabel?.isHidden = true
+            cell.label.textAlignment = .center
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "toCell") as! WeightCell2
+            cell.label.text = measurements[indexPath.row]
+            cell.textLabel?.text = measurements[indexPath.row]
+            cell.textLabel?.isHidden = true
+            cell.label.textAlignment = .center
+            return cell
+        }
+        
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView.tag == 1{

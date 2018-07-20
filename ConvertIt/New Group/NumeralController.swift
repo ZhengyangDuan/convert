@@ -1,5 +1,5 @@
 //
-//  WeightCell.swift
+//  NumeralController.swift
 //  ConvertIt
 //
 //  Created by Zhengyang Duan on 2018-07-20.
@@ -9,18 +9,15 @@
 import Foundation
 import UIKit
 
-
-class WeightCell1: UITableViewCell
-{
+class NumeralController: UIViewController {
     
-    @IBOutlet weak var label: UILabel!
     
-}
-
-class WeightCell2: UITableViewCell
-{
     
-    @IBOutlet weak var label: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
     
 }
-
