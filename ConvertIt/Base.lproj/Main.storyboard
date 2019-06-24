@@ -89,11 +89,12 @@
                         <segue destination="Lsj-s5-zOa" kind="show" identifier="Weight" id="9xa-fg-jxV"/>
                         <segue destination="Usp-Xt-BNv" kind="show" identifier="Numeral" id="dIA-5M-V4Z"/>
                         <segue destination="RSc-ym-OA8" kind="show" identifier="Length" id="3jU-ed-w1K"/>
+                        <segue destination="cya-fY-bbZ" kind="show" identifier="Decimal" id="SDt-1k-9T8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5GZ-2f-0uz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951.2" y="-90.404797601199405"/>
+            <point key="canvasLocation" x="1855" y="-69"/>
         </scene>
         <!--Numeral Controller-->
         <scene sceneID="e3K-GD-voc">
@@ -179,6 +180,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4l2-hx-E0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2756" y="678.71064467766121"/>
+        </scene>
+        <!--Decimal View Controller-->
+        <scene sceneID="CSR-O1-2eW">
+            <objects>
+                <viewController id="cya-fY-bbZ" customClass="DecimalViewController" customModule="ConvertIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HZd-pp-RSq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gQg-hi-Qmg">
+                                <rect key="frame" x="72" y="266" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M41-ta-sG7">
+                                <rect key="frame" x="232" y="271" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bY-jg-dhS">
+                                <rect key="frame" x="110" y="380" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="binToDecTapped:" destination="cya-fY-bbZ" eventType="touchUpInside" id="pT5-dW-7ZW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rz3-gl-k4P">
+                                <rect key="frame" x="230" y="380" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="decToBinTapped:" destination="cya-fY-bbZ" eventType="touchUpInside" id="QY2-ou-UuV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jxd-RD-2it"/>
+                    </view>
+                    <connections>
+                        <outlet property="inputField" destination="gQg-hi-Qmg" id="wdS-GK-nqu"/>
+                        <outlet property="result" destination="M41-ta-sG7" id="XMq-yo-nUC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oAh-Ka-GZb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1951" y="-800"/>
         </scene>
         <!--Length Controller-->
         <scene sceneID="nKM-ml-XOj">
@@ -420,7 +472,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QGa-CY-P76" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2756" y="-90.404797601199405"/>
+            <point key="canvasLocation" x="2849" y="-90"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="X8D-tM-ji4">
+            <objects>
+                <viewController id="wEB-ai-iSa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t3k-8A-Y8k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="bCG-6h-1pD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W9S-cN-zIl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3569" y="-90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BDO-ZG-Xd8">
@@ -438,7 +505,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQL-cC-zar" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1012" y="-90.404797601199405"/>
+            <point key="canvasLocation" x="1068" y="-90"/>
         </scene>
     </scenes>
     <resources>
